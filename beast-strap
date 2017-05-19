@@ -1,0 +1,7 @@
+loadkeys dvorak
+cryptsetup luksOpen /dev/sda2 root
+lvmdiskscan
+mkdir /mnt/root
+mount /dev/mapper/main-root /mnt/root -o subvol=root
+mount /dev/sda1 /mnt/root/boot
+arch-chroot /mnt/root
